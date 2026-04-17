@@ -1,4 +1,4 @@
-name: Run Exercise Tests
+name: Template Tests
 
 on:
   push:
@@ -7,19 +7,9 @@ permissions:
   contents: read
 
 jobs:
-  test:
-    name: Test ${{ matrix.target }}
+  test-template:
+    name: Test template
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - target: solution
-            pom_file: pom_solution.xml
-            maven_args: -Dbuildhelper.addsource.skip=true
-          - target: template
-            pom_file: pom_template.xml
-            maven_args: ''
 
     steps:
       - name: Checkout repository
@@ -46,13 +36,13 @@ jobs:
           java-version: '17'
           cache: maven
 
-      - name: Run tests for ${{ matrix.target }}
-        run: mvn -B -f tests/${{ matrix.pom_file }} ${{ matrix.maven_args }} clean test
+      - name: Run template tests
+        run: mvn -B -f tests/pom_template.xml clean test
 
       - name: Upload Surefire reports
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: surefire-reports-${{ matrix.target }}
+          name: surefire-reports-template
           path: tests/target/surefire-reports
           if-no-files-found: ignore
