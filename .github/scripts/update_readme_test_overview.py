@@ -4,6 +4,7 @@ import glob
 import os
 import re
 import sys
+from datetime import datetime, timezone
 import xml.etree.ElementTree as ET
 
 
@@ -117,6 +118,17 @@ def parse_report_dir(report_dir):
     return results
 
 
+def overview_timestamp():
+    env_value = os.getenv("TEST_OVERVIEW_TIMESTAMP")
+    if env_value:
+        return env_value
+    return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+
+def overview_commit_hash():
+    return os.getenv("TEST_OVERVIEW_COMMIT") or os.getenv("GITHUB_SHA") or "unknown"
+
+
 def build_table(solution_results, template_results):
     solution_cases, solution_class = split_results_by_scope(solution_results)
     template_cases, template_class = split_results_by_scope(template_results)
@@ -143,6 +155,8 @@ def build_table(solution_results, template_results):
         "## Test Case Overview",
         "",
         "Auto-updated by CI from latest test runs.",
+        f"Updated at (UTC): {overview_timestamp()}",
+        f"Source commit: {overview_commit_hash()}",
         "",
         "Legend: ✅ passed, ❌ failed/error, ⏭️ skipped, — not present.",
         "",
