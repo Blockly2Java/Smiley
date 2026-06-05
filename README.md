@@ -18,26 +18,13 @@ Detailled exercise instruction can be found in the readme file of the template r
 
 Auto-updated by CI from latest test runs.
 <!-- markdownlint-disable-next-line MD033 -->
-> <sub>Last Updated: 21. Apr 2026 10:39:23 [CEST]</sub>
+> <sub>Last Updated: 5. Jun 2026 21:04:27 [CEST]</sub>
 <!-- markdownlint-disable-next-line MD033 -->
-> <sub>Commit: 204b0861ba76c6a4997f0de87c93b23ed5863e40</sub>
+> <sub>Commit: 6116ee7d8987e1a5516b921ccd12c73e527ce199</sub>
 
 Legend: ✅ passed, ❌ failed/error, ⏭️ skipped, — not present.
 
 | Test Case | Solution | Template |
 | --- | --- | --- |
-| test.TestManager.structAttributes[Main] | ✅ | ✅ |
-| test.TestManager.structAttributes[Smiley] | ✅ | ❌ |
-| test.TestManager.structClass[Main] | ✅ | ✅ |
-| test.TestManager.structClass[Smiley] | ✅ | ✅ |
-| test.TestManager.structConstructors[Main] | ✅ | ✅ |
-| test.TestManager.structConstructors[Smiley] | ✅ | ✅ |
-| test.TestManager.structMethods[Main] | ✅ | ✅ |
-| test.TestManager.structMethods[Smiley] | ✅ | ✅ |
-| test.TestManager.testBewegen | ✅ | ❌ |
-| test.TestManager.testRandErreicht | ✅ | ❌ |
-| test.TestManager.testRumfliegen | ✅ | ❌ |
-| test.TestManager.testSmileyCtr_Layout | ✅ | ❌ |
-| test.TestManager.testSmileyCtr_Objects | ✅ | ❌ |
-| test.TestManager.testSmileyCtr_Speed | ✅ | ❌ |
+| (no test results found) | — | — |
 <!-- TEST_OVERVIEW_END -->
